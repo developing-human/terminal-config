@@ -7,3 +7,6 @@ Currently includes:
  - alacritty
  - nvim
  - tmux
+
+Call `./setup.sh` to link the usual locations.  These locations are correct at 
+least on Fedora and MacOS.
