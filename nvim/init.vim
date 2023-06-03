@@ -35,6 +35,8 @@ call plug#end()
 
 syntax enable
 filetype plugin indent on
+set shiftwidth=4 smarttab
+set expandtab
 
 set updatetime=300
 inoremap jj <Esc>
@@ -48,6 +50,9 @@ autocmd BufNewFile,BufRead * setlocal formatoptions-=o
 
 " Rust-specific configuration
 let g:rustfmt_autosave = 1
+
+" Javascipt-specific configuration
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 
 " Update colors more to my liking (more subtle inlays/search/status/unused_var)
 set termguicolors
