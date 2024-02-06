@@ -1,3 +1,8 @@
+" I'm using a neovim plugin in vscode, some of this configuration
+" causes issues inside of vscode, so just exit.
+if exists('g:vscode')
+  finish
+endif
 
 " Install vim-plug if it isn't already
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
