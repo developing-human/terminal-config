@@ -5,6 +5,7 @@ mv ~/.config/alacritty ~/.config/alacritty.bak
 ln -s `pwd`/alacritty ~/.config/alacritty
 
 # Link nvim config
+mkdir -p ~/.config/nvim
 mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim.bak
 ln -s `pwd`/nvim/init.vim ~/.config/nvim/init.vim
 
