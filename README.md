@@ -7,6 +7,9 @@ Currently includes:
  - alacritty
  - nvim
  - tmux
+ - dunst
+ - hypr (hyprland, hypridle, hyprlock)
+ - waybar
 
 Call `./setup.sh` to link the usual locations.  These locations are correct at 
 least on Fedora and MacOS.
