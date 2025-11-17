@@ -1,0 +1,14 @@
+# general.import = ["/home/doug/.config/alacritty/themes/themes/tomorrow_night_bright.toml"]
+general.import = ["~/.config/alacritty/themes/cyberdream.toml"]
+
+[font]
+normal = { family = "Monaspace Neon" }
+size = 17
+
+[window]
+opacity = 0.95
+decorations = "none"
+padding = { x = 0, y = 0 }
+
+[scrolling]
+history = 100000
