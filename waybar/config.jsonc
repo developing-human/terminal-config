@@ -13,6 +13,7 @@
         // TODO: Figure out where to put wttr
         // "group/wttr",
         "hyprland/workspaces",
+        "custom/todo"
     ],
 
     "modules-right": [
@@ -164,6 +165,14 @@
         "exec": "~/.config/waybar/scripts/moon.sh",
         "interval": 86400,  // update once a day
         "tooltip": false
+    },
+
+    "custom/todo": {
+        "exec": "~/.config/waybar/scripts/todo.sh",
+        "return-type": "json",
+        "format": "TODO ({})",
+        "on-click": "alacritty -e nvim ~/todo.txt",
+        "interval": 5,
     },
 
     /* Power group */
