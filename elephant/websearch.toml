@@ -1,0 +1,8 @@
+[[entries]]
+default = true
+name = "Duck Duck Go"
+url = "https://www.duckduckgo.com?q=%TERM%"
+
+[[entries]]
+name = "Kagi"
+url = "https://www.kagi.com/search?q=%TERM%"
