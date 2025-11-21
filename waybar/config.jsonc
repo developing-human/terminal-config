@@ -18,6 +18,7 @@
 
     "modules-right": [
         "network",
+        "bluetooth",
         "group/audio",
         "battery",
         "clock",
@@ -42,7 +43,15 @@
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}",
-        "on-click-right": "nm-connection-editor"
+        "on-click-right": "alacritty --class waybar-nmtui -e nmtui-connect"
+    },
+
+    "bluetooth": {
+        "format-on": " on",
+        "format-disabled": " off",
+        "format-connected": " {device_alias}",
+        "on-click": "~/.config/waybar/scripts/toggle_bluetooth.sh",
+        "on-click-right": "blueman-manager"
     },
 
     "hyprland/workspaces": {
@@ -101,7 +110,7 @@
     },
 
     "cpu": {
-        "interval": 1,
+        "interval": 5,
         "format": " {}%",
         "max-length": 10
     },
@@ -127,10 +136,10 @@
     },
 
     "wireplumber": {
-        "format": "{icon} {volume}%",
+        "format": "{icon} {volume}% {node_name}",
         "format-muted": "",
-        "on-click": "pwvucontrol",
-        "on-click-right": "wpctl set-mute @DEFAULT_SINK@ toggle",
+        "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pwvucontrol",
         "format-icons": ["", "", ""],
         "scroll-step": 5
     },
@@ -138,7 +147,7 @@
     "wireplumber#source": {
         "node-type": "Audio/Source",
         "format": "󰍬 {volume}%",
-        "format-muted": "󰍭",
+        "format-muted": " 󰍭 ",
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
         "scroll-step": 5
     },
@@ -172,7 +181,7 @@
         "return-type": "json",
         "format": "TODO ({})",
         "on-click": "alacritty -e nvim ~/todo.txt",
-        "interval": 5,
+        "interval": 15,
     },
 
     /* Power group */

@@ -21,6 +21,7 @@
 #custom-moon,
 .hardware-child,
 #battery,
+#bluetooth,
 #cpu,
 #memory,
 #temperature,
@@ -146,10 +147,26 @@ window.empty {
   color: #f38ba8;
 }
 
+#bluetooth {
+  background: rgba(137, 180, 250, 0.2);
+  color: #89b4fa;
+
+  /* makes size consistent between muted & not muted */
+  min-width: 50px;
+}
+
+#bluetooth.off {
+  background: rgba(243, 139, 168, 0.2);
+  color: #f38ba8;
+}
+
 /* ========== Audio ========== */
 #wireplumber {
   background: rgba(137, 180, 250, 0.2);
   color: #89b4fa;
+
+  /* makes size consistent between muted & not muted */
+  min-width: 120px;
 }
 
 #wireplumber.muted {

@@ -10,3 +10,8 @@ url = "https://www.duckduckgo.com?q=%TERM%"
 [[entries]]
 name = "Kagi"
 url = "https://www.kagi.com/search?q=%TERM%"
+
+[[entries]]
+default = true
+name = "URL"
+url = "https://%TERM%"
