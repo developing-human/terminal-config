@@ -1,10 +1,10 @@
 * {
   font-family: "FiraCode Nerd Font", monospace;
-  font-size: 14px;
   min-height: 0;
 }
 
 #waybar {
+  font-size: 14px;
   /* background: rgba(30, 30, 46, 0.95); */
   background: linear-gradient(180deg, #000022, #000055);
   color: #cdd6f4;
@@ -74,12 +74,13 @@
 
 #workspaces button {
   color: #6c7086;
-  padding: 1px 10px 0 8px;
+  padding: 1px 13px 0 8px;
   margin: 0 1px;
   border: none;
   border-radius: 0px;
   background: rgba(49, 50, 68, 0.6);
   transition: all 0.3s ease;
+  font-size: 20px;
 }
 
 #workspaces button:hover {
