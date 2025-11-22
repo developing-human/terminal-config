@@ -141,9 +141,10 @@
 
     "wireplumber": {
         "format": "{icon} {volume}% {node_name}",
-        "format-muted": "",
+        "format-muted": "  {node_name}",
         "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "pwvucontrol",
+        "on-click-middle": "~/.config/waybar/scripts/cycle_audio_device.sh",
         "format-icons": ["", "", ""],
         "scroll-step": 5
     },
