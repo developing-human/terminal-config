@@ -143,7 +143,8 @@ window.empty {
   color: #89b4fa;
 }
 
-#network.disconnected {
+#network.disconnected,
+#network.disabled {
   background: rgba(243, 139, 168, 0.2);
   color: #f38ba8;
 }

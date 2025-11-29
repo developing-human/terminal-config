@@ -36,13 +36,14 @@
     },
 
     "network": {
-        "format-wifi": "{icon} {signalStrength}%",
+        "format-wifi": "{icon} {signalStrength}% {essid}",
         "format-ethernet": "{ipaddr}/{cidr}",
         "format-icons": ["󰤟", "󰤢", "󰤥"],
-        "tooltip-format": "{essid} - {ifname} via {gwaddr}",
+        "tooltip-format": "{essid} - {ifname} {ipaddr}",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}",
+        "format-disabled": "Disabled ⚠",
+        "on-click": "~/.config/waybar/scripts/toggle_wifi.sh",
         "on-click-right": "alacritty --class waybar-nmtui -e nmtui-connect"
     },
 
