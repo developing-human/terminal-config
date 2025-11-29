@@ -1,4 +1,4 @@
-# terminal-config
+# dotfiles
 My configuration for linux.  Intended to live in one location and have 
 their normal config locations point to it via symbolic links.
 
