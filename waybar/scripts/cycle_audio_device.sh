@@ -1,5 +1,5 @@
 #!/bin/bash -e
-# Cycles through available audio devices by processing pulsewire dump json.
+# Cycles through available audio devices by processing pipewire dump json.
 
 current_device_name=$(pw-dump | jq '.[] | select(.id==38) | .metadata[] | select(.key=="default.audio.sink") | .value.name')
 echo "current device name: " $current_device_name
