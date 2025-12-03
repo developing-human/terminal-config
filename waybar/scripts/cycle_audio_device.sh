@@ -13,17 +13,16 @@ echo "all current device ids" $all_current_device_ids
 all_current_device_ids=($all_current_device_ids)
 
 # map device id to index in all_current_device_ids
+# if this doesn't change, it cleverly uses -1 + 1 = 0, the first in the list
 current_index=-1
-for i in "${!all_current_device_ids[@]}"; do
-    if [ "${all_current_device_ids[$i]}" -eq "$current_device_id" ]; then
-        current_index=$i
-        break
-    fi
-done
 
-if [[ "$current_index" -lt 0 ]]; then
-    echo "Error: current device not found in sink list" >&2
-    exit 1
+if [ -n "$current_device_id" ]; then
+    for i in "${!all_current_device_ids[@]}"; do
+    	if [ "${all_current_device_ids[$i]}" -eq "$current_device_id" ]; then
+    		current_index=$i
+    		break
+    	fi
+    done
 fi
 
 # compute next device index, wrapping around
