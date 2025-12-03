@@ -21,5 +21,7 @@ mv ~/.config/dunst ~/.config/dunst.bak
 ln -s `pwd`/dunst ~/.config/dunst
 
 # Link tmux config
+# tpm is cloned into ~/.tmux, NOT ~/.config/tmux, per docs
 mv ~/.config/tmux ~/.config/tmux.bak
 ln -s `pwd`/tmux ~/.config/tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
