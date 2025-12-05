@@ -179,7 +179,7 @@ todo = [
 ]
 
 runner = [
-  { action = "run", default = true, bind = "Return" },
+  { action = "run", bind = "Return" },
   { action = "runterminal", label = "run in terminal", bind = "shift Return" },
 ]
 

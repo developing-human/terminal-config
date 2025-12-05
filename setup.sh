@@ -20,6 +20,14 @@ ln -s `pwd`/waybar ~/.config/waybar
 mv ~/.config/dunst ~/.config/dunst.bak
 ln -s `pwd`/dunst ~/.config/dunst
 
+# Link walker config
+mv ~/.config/walker ~/.config/walker.bak
+ln -s `pwd`/walker ~/.config/walker
+
+# Link elephant config
+mv ~/.config/elephant ~/.config/elephant.bak
+ln -s `pwd`/elephant ~/.config/elephant
+
 # Link tmux config
 # tpm is cloned into ~/.tmux, NOT ~/.config/tmux, per docs
 mv ~/.config/tmux ~/.config/tmux.bak
