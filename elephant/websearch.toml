@@ -4,6 +4,11 @@ command = "hyprctl dispatch workspace 2 && xdg-open"
 
 [[entries]]
 default = true
+name = "URL"
+url = "https://%TERM%"
+
+[[entries]]
+default = true
 name = "Kagi"
 url = "https://www.kagi.com/search?q=%TERM%"
 
@@ -12,7 +17,3 @@ default = true
 name = "Duck Duck Go"
 url = "https://www.duckduckgo.com?q=%TERM%"
 
-[[entries]]
-default = true
-name = "URL"
-url = "https://%TERM%"
