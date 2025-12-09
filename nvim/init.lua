@@ -175,8 +175,17 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 vim.keymap.set("n", "<leader>tv", function()
-	local new_config = not vim.diagnostic.config().virtual_lines
-	vim.diagnostic.config({ virtual_lines = new_config })
+	if vim.diagnostic.config().virtual_lines then
+		vim.diagnostic.config({ virtual_lines = false })
+	else
+		vim.diagnostic.config({
+			virtual_lines = {
+				current_line = true,
+			},
+		})
+	end
+	-- local new_config = not vim.diagnostic.config().virtual_lines
+	-- vim.diagnostic.config({ virtual_lines = new_config })
 end, { desc = "Toggle diagnostic [v]irtual_lines" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
