@@ -68,9 +68,6 @@
 #workspaces {
   background: transparent;
   padding: 0 4px;
-
-  /* kinda janky offset to stay centered despite todos */
-  margin-left: 87px;
 }
 
 #workspaces button {
