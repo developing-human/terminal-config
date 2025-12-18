@@ -1072,6 +1072,29 @@ require("lazy").setup({
 	-- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
 	-- you can continue same window with `<space>sr` which resumes last telescope search
 	"windwp/nvim-ts-autotag",
+	{
+		"stevearc/oil.nvim",
+		-- dependencies = { "nvim-tree/nvim-web-devicons" },
+		dependencies = { { "echasnovski/mini.icons", opts = {} } },
+		config = function()
+			require("oil").setup({
+				columns = { "icon" },
+				keymaps = {
+					["<C-h>"] = false,
+					["<M-h>"] = "actions.select_split",
+				},
+				view_options = {
+					show_hidden = true,
+				},
+			})
+
+			-- Open parent directory in current window
+			vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+			-- Open parent directory in floating window
+			vim.keymap.set("n", "<space>-", require("oil").toggle_float)
+		end,
+	},
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
