@@ -7,13 +7,13 @@
     "modules-left": [
         // "hyprland/submap"
         "group/hardware",
+        "custom/task"
     ],
 
     "modules-center": [
         // TODO: Figure out where to put wttr
         // "group/wttr",
         "hyprland/workspaces",
-        "custom/todo"
     ],
 
     "modules-right": [
@@ -187,6 +187,14 @@
         "return-type": "json",
         "format": "TODO ({})",
         "on-click": "alacritty -e nvim ~/todo.txt",
+        "interval": 15,
+    },
+
+    "custom/task": {
+        "exec": "~/.config/waybar/scripts/next_task.sh",
+        // "return-type": "json",
+        "format": "Task: {}",
+        "on-click": "~/.config/hypr/scripts/open_tasks.sh",
         "interval": 15,
     },
 
