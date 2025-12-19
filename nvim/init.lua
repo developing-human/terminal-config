@@ -161,9 +161,12 @@ vim.opt.scrolloff = 10
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 
--- not sure how this will interact with guess-indent, but init.lua
--- uses tabs and 8 was too much for my liking.
-vim.opt.tabstop = 4
+-- set reasonable defaults, some languages override in after/ftplugin
+vim.opt.tabstop = 4 -- tabs are 4 spaces
+vim.opt.softtabstop = 4 -- tabs are 4 spaces
+vim.opt.shiftwidth = 4 -- number of spaces to use on indent
+vim.opt.expandtab = true -- turns tabs to spaces
+vim.opt.smartindent = true
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -1057,7 +1060,7 @@ require("lazy").setup({
 	-- require 'kickstart.plugins.debug',
 	-- require 'kickstart.plugins.indent_line',
 	-- require 'kickstart.plugins.lint',
-	-- require 'kickstart.plugins.autopairs',
+	require("kickstart.plugins.autopairs"),
 	-- require 'kickstart.plugins.neo-tree',
 	require("kickstart.plugins.gitsigns"), -- adds gitsigns recommend keymaps
 
