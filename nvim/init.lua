@@ -191,6 +191,10 @@ vim.keymap.set("n", "<leader>tv", function()
 	-- vim.diagnostic.config({ virtual_lines = new_config })
 end, { desc = "Toggle diagnostic [v]irtual_lines" })
 
+vim.keymap.set("n", "<leader>td", function()
+	vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { silent = true, noremap = true, desc = "[T]oggle [D]iagnostics" })
+
 vim.keymap.set("n", "<leader>w", ":w<cr>", { desc = "[W]rite buffer" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
@@ -849,12 +853,12 @@ require("lazy").setup({
 					-- `friendly-snippets` contains a variety of premade snippets.
 					--    See the README about individual language/framework/plugin snippets:
 					--    https://github.com/rafamadriz/friendly-snippets
-					-- {
-					--   'rafamadriz/friendly-snippets',
-					--   config = function()
-					--     require('luasnip.loaders.from_vscode').lazy_load()
-					--   end,
-					-- },
+					{
+						"rafamadriz/friendly-snippets",
+						config = function()
+							require("luasnip.loaders.from_vscode").lazy_load()
+						end,
+					},
 				},
 				opts = {},
 			},
