@@ -168,6 +168,17 @@ vim.opt.shiftwidth = 4 -- number of spaces to use on indent
 vim.opt.expandtab = true -- turns tabs to spaces
 vim.opt.smartindent = true
 
+-- when in a templates directory, treat html files like tera (due to zola projects)
+vim.filetype.add({
+	extension = {
+		html = function(path)
+			if path:match("templates") then
+				return "tera"
+			end
+			return "html"
+		end,
+	},
+})
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -815,6 +826,20 @@ require("lazy").setup({
 					}
 				end
 			end,
+			formatters = {
+				ludtwig = {
+					command = "ludtwig",
+					args = { "--fix", "$FILENAME" },
+					-- ludtwig modifies files in place, not through stdin/stdout
+					stdin = false,
+					-- even with errors it reformats, and since tera isn't exactly twig
+					-- it's fine to just roll w/ some errors
+					exit_codes = { 0, 1 },
+				},
+				cwd = function()
+					return vim.fs.root(0, { ".git" })
+				end,
+			},
 			formatters_by_ft = {
 				lua = { "stylua" },
 				-- Conform can also run multiple formatters sequentially
@@ -827,6 +852,7 @@ require("lazy").setup({
 				javascript = { "prettierd", "prettier", stop_after_first = true },
 				html = { "prettierd", "prettier", stop_after_first = true },
 				css = { "prettierd", "prettier", stop_after_first = true },
+				tera = { "ludtwig" },
 			},
 		},
 	},
@@ -1015,6 +1041,7 @@ require("lazy").setup({
 				"query",
 				"vim",
 				"vimdoc",
+				"tera",
 			},
 			-- Autoinstall languages that are not installed
 			auto_install = true,
